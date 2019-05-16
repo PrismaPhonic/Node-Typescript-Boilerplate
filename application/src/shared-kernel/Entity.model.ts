@@ -1,5 +1,5 @@
 export abstract class Entity {
-	private _version = 0;
+	protected _version = 0;
 	private _discarded = false;
 
 	protected constructor (
