@@ -1,5 +1,5 @@
 # Node Typescript Boilerplate
-[![Build Status](https://travis-ci.org/PrismaPhonic/Node-Typescript-Boilerplate.svg?branch=master)](https://travis-ci.org/libellis/DDD-Libellis)
+[![Build Status](https://travis-ci.org/PrismaPhonic/Node-Typescript-Boilerplate.svg?branch=master)](https://travis-ci.org/PrismaPhonic/Node-Typescript-Boilerplate)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
 ## Introduction
