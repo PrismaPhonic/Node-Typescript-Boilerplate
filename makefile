@@ -1,5 +1,5 @@
 ifndef BUILD_GROUP
-	BUILD_GROUP="libellis-backend"
+	BUILD_GROUP="template"
 endif
 
 ifndef BUILD_NUMBER
@@ -39,23 +39,23 @@ docker-up:
 
 docker-test:
 	docker-compose -f docker-compose.yml up -d
-	docker exec -ti `docker ps -a | grep libellis | awk '{ print $$1 }'` /bin/sh -c "npm test"
+	docker exec -ti `docker ps -a | grep template | awk '{ print $$1 }'` /bin/sh -c "npm test"
 
 docker-clean:
 	@echo 'stopping docker containers'
 	@docker stop `docker ps -aq`
 	@echo 'removing all node containers'
-	@docker ps -a | awk '{ print $$1,$$2 }' | grep libellis | awk '{ print $$1 }' | xargs -I {} docker rm {}
+	@docker ps -a | awk '{ print $$1,$$2 }' | grep template | awk '{ print $$1 }' | xargs -I {} docker rm {}
 
 docker-deep-clean:
 	-docker stop `docker ps -aq`
 	-docker rm `docker ps -aq`
 	-docker rmi `docker images -qf dangling=true`
 	-docker volume rm `docker volume ls -qf dangling=true`
-	-docker rmi `docker images --format '{{.Repository}}:{{.Tag}}' | grep "libellis/"` -f
+	-docker rmi `docker images --format '{{.Repository}}:{{.Tag}}' | grep "template/"` -f
 
 docker-stop:
-	@echo 'stopping libellis api container'
-	@docker ps -a | awk '{ print $$1,$$2 }' | grep libellis/libellis-api | awk '{ print $$1 }' | xargs -I {} docker stop {}
+	@echo 'stopping template api container'
+	@docker ps -a | awk '{ print $$1,$$2 }' | grep template/template-api | awk '{ print $$1 }' | xargs -I {} docker stop {}
 
 

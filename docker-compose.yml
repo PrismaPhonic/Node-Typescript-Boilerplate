@@ -2,19 +2,19 @@ version: '3.4'
 
 services:
 
-  libellis:
+  template:
     build:
       context: ./
       args:
-        - application=libellis
-        - friendly="Libellis API"
+        - application=template
+        - friendly="TEMPLATE API"
         - build_hash=${HASH:-localbuild_hashmissing}
         - build_user=${BUILD_USER:-$USER}
         - build_branch=${BRANCH:-nobranch}
         - build_number=${BUILD_NUMBER:-1.0.0}
         - build_group=${BUILD_GROUP:-nogroupspecified}
-    image: libellis/libellis-api:${BUILD_NUMBER:-1.0.0}
-    container_name: libellis
+    image: template/template-api:${BUILD_NUMBER:-1.0.0}
+    container_name: template
     volumes:
       - ./application:/app
       - /app/node_modules
