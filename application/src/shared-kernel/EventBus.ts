@@ -3,9 +3,9 @@ import { AggregateRootCreatedEvent } from "../core-domain/core/domain/events/Agg
 
 // This should be instantiated as a Singleton and shared around.
 export class EventBus {
-	public exampleEventStream: Subject<AggregateRootCreatedEvent>;
+  public exampleEventStream: Subject<AggregateRootCreatedEvent>;
 
-	constructor() {
-		this.exampleEventStream = new Subject();
-	}
+  constructor() {
+    this.exampleEventStream = new Subject();
+  }
 }
