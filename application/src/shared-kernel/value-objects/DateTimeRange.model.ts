@@ -50,11 +50,6 @@ export class DateTimeRange extends ValueObject {
       this._end.getTime() > other._start.getTime();
   }
 
-  equals(other: DateTimeRange) {
-    return this._start.getTime() === other._start.getTime() &&
-      this._end.getTime() === other._end.getTime();
-  }
-
   currentlyIn() {
     const now = new Date();
 

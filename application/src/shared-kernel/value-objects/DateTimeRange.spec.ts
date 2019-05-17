@@ -18,7 +18,7 @@ describe('test date time range inner equality checking', () => {
     const end1 = new Date(start.getTime() + 10000);
     const dateTimeRange1 = new DateTimeRange(start, end1);
 
-    const end2 = new Date(start.getTime() + 20000);
+    const end2 = new Date(start.getTime() + 50000);
 
     const dateTimeRange2 = new DateTimeRange(start, end2);
 

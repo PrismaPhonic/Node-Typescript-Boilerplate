@@ -23,11 +23,11 @@ export abstract class ValueObject {
   private setsMatch<T>(setA: Set<T>, setB: Set<T>): boolean {
     if (setA.size !== setB.size) return false;
 
-    setA.forEach(elem => {
+    for (const elem of setA) {
       if (!setB.has(elem)) {
         return false;
       }
-    });
+    }
 
     return true;
   }
